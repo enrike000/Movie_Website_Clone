@@ -16,7 +16,14 @@ const ResponsiveAppBar = () => {
   return (
     <>
       <Stack
-        sx={{ justifyContent: "space-around", mt: 2, mb: 2 }}
+        sx={{
+          mt: 2,
+          mb: 2,
+          position: "absolute",
+          width: 1,
+          zIndex: "10",
+        }}
+        justifyContent="space-around"
         direction="row"
         spacing={2}
       >
@@ -28,11 +35,7 @@ const ResponsiveAppBar = () => {
           />
         </Box>
         <Box>
-          <Stack
-            sx={{ justifyContent: "space-around" }}
-            direction="row"
-            spacing={2}
-          >
+          <Stack justifyContent="space-around" direction="row" spacing={1}>
             {categories.map((name) => (
               <Stack
                 direction="column"
@@ -41,10 +44,12 @@ const ResponsiveAppBar = () => {
                 alignItems="center"
               >
                 <Button>
-                  <Typography>{name.name}</Typography>
+                  <Typography sx={{ color: "white", fontFamily: "BOG" }}>
+                    {name.name}
+                  </Typography>
                 </Button>
 
-                <Icon>{name.icon}</Icon>
+                <Icon sx={{ color: "white" }}>{name.icon}</Icon>
               </Stack>
             ))}
           </Stack>
@@ -55,6 +60,7 @@ const ResponsiveAppBar = () => {
             to="/login"
             variant="outlined"
             sx={{
+              fontFamily: "BOG",
               height: "40%",
               "&:hover": {
                 backgroundColor: "#f1f2f5",
@@ -63,7 +69,11 @@ const ResponsiveAppBar = () => {
           >
             შესვლა
           </Button>
-          <Button sx={{ height: "40%" }} to="/register" variant="contained">
+          <Button
+            sx={{ height: "40%", fontFamily: "BOG" }}
+            to="/register"
+            variant="contained"
+          >
             რეგისტრაცია
           </Button>
         </Box>
