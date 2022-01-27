@@ -44,7 +44,7 @@ const Item = ({ photo, name }) => {
       >
         <Typography
           sx={{
-            color: "rgba(58, 122, 41, 0.83)",
+            color: "white",
             fontSize: 40,
             fontFamily: "BOG",
           }}
